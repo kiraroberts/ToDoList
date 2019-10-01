@@ -57,7 +57,7 @@ namespace ToDoList.Tests
     }
 
     [TestMethod]
-    public void GetAll_ReturndItems_ItemList()
+    public void GetAll_ReturnsItems_ItemList()
     {
       //Arrange
       string description01 = "Walk the dog";
