@@ -10,7 +10,7 @@ namespace ToDoList.Tests
   {
     public void Dispose()
     {
-      // Item.ClearAll();
+      Item.ClearAll();
     }
 
     [TestMethod]
@@ -23,7 +23,7 @@ namespace ToDoList.Tests
     [TestMethod]
     public void GetDescription_ReturnsDescription_String()
     {
-      string description = "Walk the dog";
+      string description = "Walk the dog.";
       Item newItem = new Item(description);
       string result = newItem.Description;
       Assert.AreEqual(description, result);
@@ -52,10 +52,6 @@ namespace ToDoList.Tests
       List<Item> newList = new List<Item> { };
       //Act
       List<Item> result = Item.GetAll();
-      foreach (Item thisItem in result)
-      {
-        Console.WriteLine("Output from second GetAll test: " + thisItem.Description);
-      }
       //Assert
       CollectionAssert.AreEqual(newList, result);
     }
@@ -71,10 +67,6 @@ namespace ToDoList.Tests
       List<Item> newList = new List<Item> { newItem1, newItem2 };
       //Act
       List<Item> result = Item.GetAll();
-      foreach (Item thisItem in result)
-      {
-        Console.WriteLine("Output from second GetAll test: " + thisItem.Description);
-      }
       //Assert
       CollectionAssert.AreEqual(newList, result);
     }
