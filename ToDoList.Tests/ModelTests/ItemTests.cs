@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ToDoList.Models;
@@ -27,7 +28,7 @@ namespace ToDoList.Tests
     [TestMethod]
     public void SetDescription_SetDescription_String()
     {
-      //Arrage 
+      //Arrange 
       string description = "Walk the dog.";
       Item newItem = new Item(description);
 
