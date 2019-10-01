@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ToDoList.Models;
 
@@ -21,6 +22,33 @@ namespace ToDoList.Tests
       Item newItem = new Item(description);
       string result = newItem.Description;
       Assert.AreEqual(description, result);
+    }
+
+    [TestMethod]
+    public void SetDescription_SetDescription_String()
+    {
+      //Arrage 
+      string description = "Walk the dog.";
+      Item newItem = new Item(description);
+
+      //Act
+      string updatedDescription = "Do the dishes";
+      newItem.Description = updatedDescription;
+      string result = newItem.Description;
+
+     //Assert
+     Assert.AreEqual(updatedDescription, result); 
+    }
+
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_ItemList()
+    {
+      //Arrange
+      List<Item> newList = new List<Item> { };
+      //Act
+      List<Item> result = Item.GetAll();
+      //Assert
+      CollectionAssert.AreEqual(newList, result);
     }
   }
 }
